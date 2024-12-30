@@ -1,3 +1,8 @@
 export declare class AuthService {
-    test(): void;
+    signin(): {
+        msg: string;
+    };
+    signup(): {
+        msg: string;
+    };
 }

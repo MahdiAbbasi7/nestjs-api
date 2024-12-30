@@ -15,12 +15,29 @@ const auth_service_1 = require("./auth.service");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
-        this.authService.test();
+    }
+    signin() {
+        return this.authService.signin();
+    }
+    signup() {
+        return this.authService.signup();
     }
 };
 exports.AuthController = AuthController;
+__decorate([
+    (0, common_1.Post)("signin"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "signin", null);
+__decorate([
+    (0, common_1.Post)("signup"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "signup", null);
 exports.AuthController = AuthController = __decorate([
-    (0, common_1.Controller)(),
+    (0, common_1.Controller)("auth"),
     __metadata("design:paramtypes", [auth_service_1.AuthService])
 ], AuthController);
 //# sourceMappingURL=auth.controller.js.map
