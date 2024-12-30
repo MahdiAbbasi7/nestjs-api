@@ -3,9 +3,15 @@ import { AuthDto } from "./dto";
 export declare class AuthService {
     private prisma;
     constructor(prisma: PrismaService);
-    signin(dto: AuthDto): {
-        msg: string;
-    };
+    signin(dto: AuthDto): Promise<{
+        id: number;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string;
+        hash: string;
+        firstName: string | null;
+        lastName: string | null;
+    }>;
     signup(dto: AuthDto): Promise<{
         id: number;
         email: string;
