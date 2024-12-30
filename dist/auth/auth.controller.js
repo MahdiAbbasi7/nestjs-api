@@ -21,7 +21,6 @@ let AuthController = class AuthController {
         this.authService = authService;
     }
     signin(dto) {
-        console.log(dto.email);
         return this.authService.signin(dto);
     }
     signup(dto) {

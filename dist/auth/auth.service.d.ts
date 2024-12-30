@@ -6,7 +6,10 @@ export declare class AuthService {
     signin(dto: AuthDto): {
         msg: string;
     };
-    signup(dto: AuthDto): {
-        msg: string;
-    };
+    signup(dto: AuthDto): Promise<{
+        email: string;
+        firstName: string;
+        lastName: string;
+        id: number;
+    }>;
 }
