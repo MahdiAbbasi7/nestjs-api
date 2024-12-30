@@ -16,10 +16,10 @@ let AuthService = class AuthService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    signin() {
+    signin(dto) {
         return { msg: 'signin' };
     }
-    signup() {
+    signup(dto) {
         return { msg: 'signup' };
     }
 };

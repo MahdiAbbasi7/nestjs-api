@@ -6,7 +6,7 @@ export declare class AuthController {
     signin(dto: AuthDto): {
         msg: string;
     };
-    signup(): {
+    signup(dto: AuthDto): {
         msg: string;
     };
 }
