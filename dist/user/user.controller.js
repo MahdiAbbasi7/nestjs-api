@@ -14,22 +14,24 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
+const decorators_1 = require("../auth/decorators");
 const guard_1 = require("../auth/guard");
 let UserController = class UserController {
-    getMe(req) {
-        return { user: req.user };
+    getMe(user, email) {
+        return user;
     }
 };
 exports.UserController = UserController;
 __decorate([
-    (0, common_1.UseGuards)(guard_1.JwtGuard),
     (0, common_1.Get)('me'),
-    __param(0, (0, common_1.Req)()),
+    __param(0, (0, decorators_1.GetUser)()),
+    __param(1, (0, decorators_1.GetUser)('email')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [Object, String]),
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "getMe", null);
 exports.UserController = UserController = __decorate([
+    (0, common_1.UseGuards)(guard_1.JwtGuard),
     (0, common_1.Controller)('users')
 ], UserController);
 //# sourceMappingURL=user.controller.js.map
